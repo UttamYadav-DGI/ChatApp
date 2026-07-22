@@ -554,24 +554,6 @@ Watch for:
 ✅ Relayed to 2 users in room: blue
 ```
 
-### Terminals 2 & 3 (Two browser windows)
-1. Open `http://localhost:5173` in both
-2. Both join "blue" room
-3. In Window 1, type "hello"
-4. **Check Console in DevTools (F12 → Console):**
-   - You'll see: `📨 Raw message received`, `✅ JSON parsed`, etc.
-
-### To Monitor Network Traffic
-1. Open DevTools (F12)
-2. Go to **Network** tab
-3. Click **WS** filter (to show WebSocket only)
-4. Send a message
-5. Click on the WebSocket connection
-6. Go to **Messages** tab
-7. You'll see all messages in real-time!
-
----
-
 ## Architecture Summary
 
 ```
@@ -592,38 +574,3 @@ Watch for:
                     │  - Message Relay    │
                     └─────────────────────┘
 ```
-
----
-
-## What You Learned Today 🎓
-
-✅ **WebSocket**: Real-time two-way communication  
-✅ **Message Flow**: Frontend → Backend → All Frontends  
-✅ **Image Compression**: Resize + JPEG quality = smaller files  
-✅ **Base64**: Binary data as text in JSON  
-✅ **ClientId**: Distinguishes own messages from others  
-✅ **Rooms**: Backend filters messages by room  
-✅ **JSON Protocol**: Structured message format  
-
----
-
-## Next Steps
-
-Want to deploy to production? You need:
-
-1. **Change WS_URL** in frontend:
-   ```javascript
-   const WS_URL = "wss://your-domain.com";  // wss = secure WebSocket
-   ```
-
-2. **Deploy backend** to server (Render.com, Railway.app, etc)
-
-3. **Set up SSL/TLS** for HTTPS + WSS
-
-4. **Consider:**
-   - Message persistence (database)
-   - User authentication
-   - File storage (S3 instead of base64)
-   - Rate limiting
-
-Want help with any of these?
